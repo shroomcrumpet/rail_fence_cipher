@@ -1,4 +1,5 @@
 
+# 3 Rails:
 def railcipher(input)
 
   i = 0
@@ -34,15 +35,14 @@ def railcipher(input)
 end
 
 
-
-
+# n rails:
 def railcipher(input, n)
 
   i = 0
   result = Hash.new
 
-  for j in 1..n do
-    result[j] = []
+  for x in 1..n do
+    result[x] = []
   end
 
 
@@ -56,7 +56,7 @@ def railcipher(input, n)
       end
     end
 
-    for m in (n - 1)..2 do
+    for m in (n - 1).downto(2)
 
       if input[i]
         result[m].push(input[i])
@@ -65,11 +65,14 @@ def railcipher(input, n)
     end
   end
 
-  puts result
+  output = ''
 
+  for z in 1..n do
+    output += result[z].join
+  end
+
+  output
 end
-
-
 
 
 
